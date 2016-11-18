@@ -50,16 +50,17 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
             public void onClick(View v) {
 
 
-                if (mascota.isFavorito() != true ){
-                    Toast.makeText(activity,"Te ha gustado "+ mascota.getNombre(), Toast.LENGTH_SHORT).show();
-                    mascota.setFavorito(true);
-                    mascota.setRating(mascota.getRating()+1);
-                    notifyDataSetChanged();
-                }
-                else{
+                if (mascota.isFavorito()) {
+                    Mascota.mascotasFavoritasArray.remove(mascota);
                     Toast.makeText(activity,"Ya no te gusta "+ mascota.getNombre(), Toast.LENGTH_SHORT).show();
                     mascota.setFavorito(false);
                     mascota.setRating(mascota.getRating()-1);
+                    notifyDataSetChanged();
+                } else {
+                    Mascota.mascotasFavoritasArray.add(mascota);
+                    Toast.makeText(activity,"Te ha gustado "+ mascota.getNombre(), Toast.LENGTH_SHORT).show();
+                    mascota.setFavorito(true);
+                    mascota.setRating(mascota.getRating()+1);
                     notifyDataSetChanged();
                 }
 
@@ -69,7 +70,6 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
 
 
     }
-
 
 
     @Override

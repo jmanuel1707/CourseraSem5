@@ -1,15 +1,23 @@
 package com.sanchez.jose.aplicacionmascotas;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.support.v4.os.ParcelableCompat;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+
 /**
  * Created by JoseM on 15/11/2016.
  */
-public class Mascota {
+public class Mascota implements Serializable{
     private String nombre;
     private boolean favorito;
     private int rating;
     private int foto;
+    public static ArrayList<Mascota> mascotasFavoritasArray = new ArrayList<Mascota>();
 
-    public Mascota(String nombre, boolean favorito, int rating, int foto){
+    public Mascota( String nombre, boolean favorito, int rating, int foto){
         this.nombre = nombre;
         this.favorito = favorito;
         this.rating = rating;
@@ -49,4 +57,6 @@ public class Mascota {
     public void setRating(int rating) {
         this.rating = rating;
     }
+
+
 }

@@ -8,6 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 
@@ -15,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     ArrayList<Mascota> mascotas;
     private RecyclerView listaMascotas;
-    Activity activity;
+    public static ArrayList<Mascota> mascotasFavoritasArray;
 
 
     @Override
@@ -32,6 +34,16 @@ public class MainActivity extends AppCompatActivity {
         inicializarListaMascotas();
         inicializarAdaptador();
 
+        ImageView imagenFavoritos = (ImageView) findViewById(R.id.imagenFavoritos);
+        imagenFavoritos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MascotasFavoritas.class);
+                MainActivity.this.startActivity(intent);
+            }
+        });
+
+
 
     }
 
@@ -45,12 +57,12 @@ public class MainActivity extends AppCompatActivity {
         mascotas = new ArrayList<Mascota>();
         mascotas.add(new Mascota("Sparky",false, 3, R.drawable.perro1));
         mascotas.add(new Mascota("Munchy",false, 2, R.drawable.perro2));
-        mascotas.add(new Mascota("Puppy",false, 4, R.drawable.perro3));
+        mascotas.add(new Mascota("Pirulin",false, 4, R.drawable.perro3));
         mascotas.add(new Mascota("Neron",false, 1, R.drawable.perro4));
         mascotas.add(new Mascota("Milo",false, 3, R.drawable.perro5));
 
-
     }
+
 
 
 
