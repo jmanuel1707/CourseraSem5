@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sanchez.jose.aplicacionmascotas.Contacto">
+
+    <include
+        android:id="@+id/miActionBarContacto"
+        layout="@layout/actiobarfavoritos">
+
+    </include>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/miActionBarContacto"
+        android:layout_marginTop="10dp"
+        android:id="@+id/layoutTextoComentario">
+
+        <EditText
+            android:id="@+id/comentario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Comentario"
+            android:inputType="text"
+            android:singleLine="true"
+            />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnEnviar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enviar comentario"
+        android:layout_below="@+id/layoutTextoComentario" />
+
+</RelativeLayout>

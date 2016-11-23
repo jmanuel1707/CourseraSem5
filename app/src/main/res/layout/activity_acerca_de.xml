@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sanchez.jose.aplicacionmascotas.AcercaDe">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayoutAcercaDe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/miActionBar"
+            layout="@layout/actionbar"></include>
+
+
+    </android.support.design.widget.AppBarLayout>
+
+
+
+    <TextView
+        android:layout_below="@+id/appBarLayoutAcercaDe"
+        android:id="@+id/primerTexto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Desarrollado por:"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:layout_below="@+id/primerTexto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jose Manuel Sanchez (@jmanuel1707)"
+        android:textSize="15dp"
+        android:layout_marginLeft="10dp"/>
+
+</RelativeLayout>

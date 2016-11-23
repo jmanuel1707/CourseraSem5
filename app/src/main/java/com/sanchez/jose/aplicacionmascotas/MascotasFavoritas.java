@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -33,7 +34,6 @@ public class MascotasFavoritas extends AppCompatActivity{
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowTitleEnabled(false);
 
-
         listaMascotasFavoritas = (RecyclerView) findViewById(R.id.rvMascotasFavoritas);
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
@@ -45,6 +45,8 @@ public class MascotasFavoritas extends AppCompatActivity{
 
 
     }
+
+
 
 
     public void inicializarAdaptador(){

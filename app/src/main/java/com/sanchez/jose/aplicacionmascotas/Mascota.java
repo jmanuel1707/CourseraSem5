@@ -15,7 +15,11 @@ public class Mascota implements Serializable{
     private boolean favorito;
     private int rating;
     private int foto;
+
+    public static ArrayList<Mascota> mascotas = new ArrayList<Mascota>();
     public static ArrayList<Mascota> mascotasFavoritasArray = new ArrayList<Mascota>();
+    public static ArrayList<Mascota> mascotasPerfilArray = new ArrayList<Mascota>();
+
 
     public Mascota( String nombre, boolean favorito, int rating, int foto){
         this.nombre = nombre;

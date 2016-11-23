@@ -41,6 +41,7 @@ public class MascotasFavoritasAdaptador extends RecyclerView.Adapter<MascotasFav
         mascotaFavoritaViewHolder.imgFotoFavorita.setImageResource(mascotaFavorita.getFoto());
         Integer rating = mascotaFavorita.getRating();
         mascotaFavoritaViewHolder.tvRatingFavorita.setText(rating.toString());
+        mascotaFavoritaViewHolder.tvNombreFavorita.setText(mascotaFavorita.getNombre());
 
     }
 
@@ -54,12 +55,14 @@ public class MascotasFavoritasAdaptador extends RecyclerView.Adapter<MascotasFav
 
         private ImageView imgFotoFavorita;
         private TextView tvRatingFavorita;
+        private TextView tvNombreFavorita;
 
 
         public MascotaFavoritaViewHolder(View itemView) {
             super(itemView);
             imgFotoFavorita      = (ImageView) itemView.findViewById(R.id.imgFotoFavorita);
             tvRatingFavorita   = (TextView) itemView.findViewById(R.id.tvRatingFavorita);
+            tvNombreFavorita = (TextView) itemView.findViewById(R.id.tvNombreFavorita);
 
         }
     }
