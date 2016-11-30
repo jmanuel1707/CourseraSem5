@@ -1,7 +1,6 @@
-package com.sanchez.jose.aplicacionmascotas;
+package com.sanchez.jose.aplicacionmascotas.adapter;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +9,10 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.sanchez.jose.aplicacionmascotas.db.ConstructorMascotas;
+import com.sanchez.jose.aplicacionmascotas.pojo.Mascota;
+import com.sanchez.jose.aplicacionmascotas.R;
 
 import java.util.ArrayList;
 
@@ -36,7 +39,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
 
 
     @Override
-    public void onBindViewHolder(MascotaViewHolder mascotaViewHolder, int position) {
+    public void onBindViewHolder(final MascotaViewHolder mascotaViewHolder, int position) {
         final Mascota mascota = mascotas.get(position);
         mascotaViewHolder.imgFoto.setImageResource(mascota.getFoto());
         mascotaViewHolder.tvNombre.setText(mascota.getNombre());
@@ -49,7 +52,12 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
             @Override
             public void onClick(View v) {
 
+                ConstructorMascotas constructorMascotas = new ConstructorMascotas(activity);
+                constructorMascotas.actualizarFavorito(mascota);
+                Integer numeroFavoritos = constructorMascotas.obtenerDatosMascota(mascota).getRating();
+                mascotaViewHolder.tvRating.setText(numeroFavoritos.toString());
 
+                /*
                 if (mascota.isFavorito()) {
                     Mascota.mascotasFavoritasArray.remove(mascota);
                     Toast.makeText(activity,"Ya no te gusta "+ mascota.getNombre(), Toast.LENGTH_SHORT).show();
@@ -63,6 +71,7 @@ public class MascotaAdaptador extends RecyclerView.Adapter<MascotaAdaptador.Masc
                     mascota.setRating(mascota.getRating()+1);
                     notifyDataSetChanged();
                 }
+                */
 
             }
         });

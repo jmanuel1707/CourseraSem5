@@ -1,6 +1,5 @@
 package com.sanchez.jose.aplicacionmascotas;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -8,16 +7,18 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.sanchez.jose.aplicacionmascotas.adapter.MascotaAdaptador;
+import com.sanchez.jose.aplicacionmascotas.adapter.PageAdapter;
+import com.sanchez.jose.aplicacionmascotas.view.ListaMascotasFragment;
+import com.sanchez.jose.aplicacionmascotas.view.MascotasFavoritas;
+import com.sanchez.jose.aplicacionmascotas.view.PerfilMascotaFragment;
+import com.sanchez.jose.aplicacionmascotas.pojo.Mascota;
 
 import java.util.ArrayList;
 
@@ -107,11 +108,11 @@ public class MainActivity extends AppCompatActivity {
         mascotas = new ArrayList<Mascota>();
 
         if (Mascota.mascotas.size() == 0){
-            Mascota.mascotas.add(new Mascota("Sparky",false, 3, R.drawable.perro1));
-            Mascota.mascotas.add(new Mascota("Munchy",false, 2, R.drawable.perro2));
-            Mascota.mascotas.add(new Mascota("Pirulin",false, 4, R.drawable.perro3));
-            Mascota.mascotas.add(new Mascota("Neron",false, 1, R.drawable.perro4));
-            Mascota.mascotas.add(new Mascota("Milo",false, 3, R.drawable.perro5));
+            Mascota.mascotas.add(new Mascota(1,"Sparky",0, 3, R.drawable.perro1));
+            Mascota.mascotas.add(new Mascota(2,"Munchy",0, 2, R.drawable.perro2));
+            Mascota.mascotas.add(new Mascota(3,"Pirulin",0, 4, R.drawable.perro3));
+            Mascota.mascotas.add(new Mascota(4,"Neron",0, 1, R.drawable.perro4));
+            Mascota.mascotas.add(new Mascota(5,"Milo",0, 3, R.drawable.perro5));
         }
 
         mascotas = Mascota.mascotas;

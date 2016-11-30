@@ -1,8 +1,4 @@
-package com.sanchez.jose.aplicacionmascotas;
-
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.support.v4.os.ParcelableCompat;
+package com.sanchez.jose.aplicacionmascotas.pojo;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -11,8 +7,9 @@ import java.util.ArrayList;
  * Created by JoseM on 15/11/2016.
  */
 public class Mascota implements Serializable{
+    private int id;
     private String nombre;
-    private boolean favorito;
+    private int favorito;
     private int rating;
     private int foto;
 
@@ -20,12 +17,24 @@ public class Mascota implements Serializable{
     public static ArrayList<Mascota> mascotasFavoritasArray = new ArrayList<Mascota>();
     public static ArrayList<Mascota> mascotasPerfilArray = new ArrayList<Mascota>();
 
+    public Mascota(){
 
-    public Mascota( String nombre, boolean favorito, int rating, int foto){
+    }
+
+    public Mascota(int id, String nombre, int favorito, int rating, int foto){
+        this.id = id;
         this.nombre = nombre;
         this.favorito = favorito;
         this.rating = rating;
         this.foto = foto;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getFoto() {
@@ -36,11 +45,11 @@ public class Mascota implements Serializable{
         this.foto = foto;
     }
 
-    public boolean isFavorito() {
+    public int isFavorito() {
         return favorito;
     }
 
-    public void setFavorito(boolean favorito) {
+    public void setFavorito(int favorito) {
         this.favorito = favorito;
     }
 

@@ -1,15 +1,15 @@
-package com.sanchez.jose.aplicacionmascotas;
+package com.sanchez.jose.aplicacionmascotas.adapter;
 
 import android.app.Activity;
-import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.sanchez.jose.aplicacionmascotas.pojo.Mascota;
+import com.sanchez.jose.aplicacionmascotas.R;
 
 import java.util.ArrayList;
 
@@ -24,7 +24,7 @@ public class MascotasFavoritasAdaptador extends RecyclerView.Adapter<MascotasFav
 
 
     public MascotasFavoritasAdaptador(ArrayList<Mascota> mascotasFavoritas, Activity activity) {
-        this.mascotasFavoritas = Mascota.mascotasFavoritasArray;
+        this.mascotasFavoritas = mascotasFavoritas;
         this.activity = activity;
     }
 
